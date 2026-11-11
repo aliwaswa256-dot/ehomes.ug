@@ -15,7 +15,7 @@ import {
   LogOut,
   ShieldCheck,
 } from 'lucide-react';
-import { COMPANY_DETAILS, ADMIN_CREDENTIALS } from '../data/mockData';
+import { COMPANY_DETAILS } from '../data/mockData';
 
 interface NavbarProps {
   activeTab: string;

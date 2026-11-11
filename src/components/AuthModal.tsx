@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Customer } from '../types';
-import { ADMIN_CREDENTIALS, DEMO_CUSTOMER } from '../data/mockData';
+import { DEMO_CUSTOMER } from '../data/mockData';
 import { StorageService } from '../services/storageService';
 import { BrandLogo } from './BrandLogo';
 import {
@@ -13,7 +13,6 @@ import {
   ShieldCheck,
   CheckCircle2,
   AlertCircle,
-  KeyRound,
   Sparkles,
 } from 'lucide-react';
 
@@ -122,13 +121,6 @@ export const AuthModal: React.FC<AuthModalProps> = ({
       onAdminLoginSuccess();
       onClose();
     }, 600);
-  };
-
-  // Auto fill the one official admin credentials helper
-  const handleFillAdminCredentials = () => {
-    setAdminEmail(ADMIN_CREDENTIALS.email);
-    setAdminPassword(ADMIN_CREDENTIALS.password);
-    setErrorMessage(null);
   };
 
   return (
@@ -391,27 +383,6 @@ export const AuthModal: React.FC<AuthModalProps> = ({
               </p>
             </div>
 
-            {/* One-click Admin Credentials Helper */}
-            <div className="p-3 rounded-xl bg-slate-900 text-white text-xs space-y-2">
-              <div className="flex items-center justify-between">
-                <span className="font-bold text-amber-400 flex items-center gap-1">
-                  <KeyRound className="w-3.5 h-3.5" />
-                  <span>Authorized Administrator</span>
-                </span>
-                <button
-                  type="button"
-                  onClick={handleFillAdminCredentials}
-                  className="px-2 py-0.5 rounded bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-[10px] transition-colors"
-                >
-                  Auto-Fill Admin
-                </button>
-              </div>
-              <div className="font-mono text-[11px] text-slate-300 space-y-0.5">
-                <p>Email: <strong className="text-white">{ADMIN_CREDENTIALS.email}</strong></p>
-                <p>Password: <strong className="text-white">{ADMIN_CREDENTIALS.password}</strong></p>
-              </div>
-            </div>
-
             {/* Admin Form */}
             <form onSubmit={handleAdminLogin} className="space-y-4 text-xs">
               <div>
@@ -425,8 +396,8 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                     required
                     value={adminEmail}
                     onChange={(e) => setAdminEmail(e.target.value)}
-                    placeholder="admin@ehomesuganda.com"
-                    className="w-full pl-9 pr-3 py-2.5 rounded-xl border border-slate-300 focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 font-mono font-medium"
+                    placeholder="Enter administrator email"
+                    className="w-full pl-9 pr-3 py-2.5 rounded-xl border border-slate-300 focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 font-medium"
                   />
                 </div>
               </div>

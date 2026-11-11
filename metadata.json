@@ -1,0 +1,6 @@
+{
+  "name": "E-HOMES – Building Value",
+  "description": "Premier land and property company in Uganda. Explore surveyed residential land sites, interactive plot selection master plans, and flexible monthly & annual payment plans.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
